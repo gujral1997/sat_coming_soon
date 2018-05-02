@@ -1,157 +1,103 @@
-/*
-* By Jose Aguinaga
-* http://jjperezaguinaga.com
-*/
-@import url(https://fonts.googleapis.com/css?family=Pathway+Gothic+One);
-
 body {
-  background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%,#f2efd9 100%);
+    width: 100%;
+    height: 100%;
+    background: url('https://unsplash.it/1920/1920/?random') no-repeat center center fixed; 
+    background-size: cover;
+    padding: 22px;
+    box-sizing: border-box;
 }
 
-@-webkit-keyframes rotate-right {
-  from { 
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes rotate-left {
-  from { 
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(-360deg);
-  }
-}
-
-@-webkit-keyframes hover {
-  0% {
-    -webkit-transform: translateY(0%);  
-  }
-  50% {
-    -webkit-transform: translateY(5%);  
-  } 
-  100% {
-    -webkit-transform: translateY(0%);
-  }     
-}
-
-@-webkit-keyframes pull {
-  0% {
-    -webkit-transform: scaleY(1);
-  }
-  40% {
-    -webkit-transform: scaleY(1.01);
-  }
-  60% {
-    -webkit-transform: scaleY(0.99);
-  }
-  80% {
-    -webkit-transform: scaleY(1.01);
-  }
-  100% {
-    -webkit-transform: scaleY(0.99);
-  }       
-  80% {
-    -webkit-transform: scaleY(1.01);
-  }
-  100% {
-    -webkit-transform: scaleY(1);
-  }   
-}
-
-@function getSpeed($speed, $type:turtle) {
-  $secs: 360;
-  $divider: 1;
-  @if($type == turtle) {
-    $divider: 1;
-  } @else if($type == rabbit) {
-    $divider: 10;
-  } @else {
-    $divider: 60;
-  }
-  @if $speed == fastest {
-    $secs: 60 / $divider;
-  } @else if $speed == really-fast {
-    $secs: 120 / $divider;
-  } @else if $speed == fast {
-    $secs: 180 / $divider;
-  } @else if $speed == slow {
-    $secs: 240 / $divider;
-  } @else if $speed == really-slow {
-    $secs: 300 / $divider;
-  } @else if $speed == slowest {
-    $secs: 360 / $divider;
-  }
-  @return #{$secs}s;
-}
-
-@mixin _rotate-animation($direction, $speed, $type) {
-  -webkit-transform: translate3d(0, 0, 0);
-  -webkit-animation: rotate-#{$direction} getSpeed($speed, $type) linear 0s infinite;
-}
-
-@mixin _hover-animation($duration, $delay) {
-  -webkit-transform: translate3d(0, 0, 0);
-  -webkit-animation: hover #{$duration}s linear #{$delay}s infinite; 
-}
-
-@mixin _pull-animation($duration, $delay, $x: 200px, $y: 200px) {
-  -webkit-transform: translate3d(0, 0, 0);
-  -webkit-transform-origin: $x $y;
-  -webkit-animation: pull #{$duration}s linear #{$delay}s infinite alternate; 
-}
-
-@mixin rotate($type, $direction: left, $speed: slow, $x: 200px, $y: 200px) {
-  -webkit-transform: translate3d(0, 0, 0);
-  -webkit-transform-origin: $x $y;
-  @include _rotate-animation($direction, $speed, $type);
-}
-
-#airplane2, #airplane1 {
-  @include rotate(turtle, right, fastest);
-}
-
-#countryObjects {
-  @include rotate(turtle, right, slow);
-}
-
-#floatingGlobe {
-  @include rotate(turtle, left, normal);
-}
-
-#globe {
-  $duration: 0;
-  $delay: 0;
-  @include _hover-animation($duration, $delay);
-}
-
-#windmill {
-  @include rotate(flash, right, really-fast, 331px, 201px);
-}
-
-// Clouds
-@for $i from 1 through 3 {
-  #cloud#{$i} {
-    @include _hover-animation(3, $i);
-  }
+body:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #27313a;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.85;
 }
 
 
-// Inner Circles
-@for $i from 1 through 5 {
-  $direction: left;
-  $speed: really-fast;
-  #circle#{$i} {
-    @if $i % 2 == 1 {
-      $direction: right;
-      $speed: really-fast;
-    } @else {
-      $direction: left;
-      $speed: slow;
+.timer-container {
+    margin: auto;
+    text-align: center;
+    position: relative;
+    top: 30vh;
+    width: 100%;
+    max-width: 1250px;
+}
+
+.timer-title {
+    display: inline-block;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 44px;
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    color: #fff;
+    border-bottom: 1px solid #ccc;
+    margin: 0 0 30px;
+    padding: 0 0 30px;
+    line-height: 1.6875;
+}
+
+.timer-counter {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 44px;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.timer-counter span {
+    color: #ddd;
+    display: inline-block;
+    box-sizing: border-box;
+    line-height: 1.6875;
+    
+    strong {
+        color: #0090ff;
+        font-weight: 500;
+        margin-right: 10px;
+        width: 60px;
+        display: inline-block;
     }
-    @include rotate(rabbit, $direction, $speed);
-  }
+}
+
+.instruction {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 1.6875;
+    margin: 30px auto 0;
+    color: #fff;
+    width: 64%;
+    opacity: 0.5;
+    font-weight: 200;
+    letter-spacing: 5px;
+    
+    a {color: inherit;}
+}
+
+footer {
+    display: block;
+    margin-top: 35px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: #fff;
+    opacity: 0.8;
+}
+
+
+@media screen and (max-width: 768px){
+    .timer-title {font-size: 32px;}
+    .timer-container {top: 0;}
+    .timer-counter {
+        font-size: 32px;
+        span {display: block;}
+    }
 }
