@@ -1,38 +1,53 @@
-const countdown = document.querySelector('.countdown');
+// JavaScript Document
+// Claudio Gomboli . the EGGS LAB
+// 2012 / 8 / 29
+// Responsive animated gallery
 
-// Set Launch Date (ms)
-const launchDate = new Date('Jan 1, 2019 13:00:00').getTime();
+$('.portfolio').each(function(index)
+{
+    $(this).attr('id', 'img' + (index + 1));
+});
+    
+$('.portfolio').each(function(){
+  $('#navi').append('<div class="circle"></div>');
+});
+  
+$('.circle').each(function(index)
+{
+    $(this).attr('id', 'circle' + (index + 1));
+});   
+   
+$('.portfolio').click(function(){
+if($(this).hasClass('opened')){
+    $(this).removeClass('opened');
+    $(".portfolio").fadeIn("fast");
+    $(this).find('.ombra').fadeOut();
+    $("#navi div").removeClass("activenav");
+}
+else{
+	var indexi = $("#maincontent .portfolio").index(this) + 1;
+    $(this).addClass('opened'); 
+    $(".portfolio").not(this).fadeOut("fast");
+    $(this).find('.ombra').fadeIn();
+    $("#circle" + indexi).addClass('activenav'); 
+}
+});	
 
-// Update every second
-const intvl = setInterval(() => {
-  // Get todays date and time (ms)
-  const now = new Date().getTime();
-
-  // Distance from now and the launch date (ms)
-  const distance = launchDate - now;
-
-  // Time calculation
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display result
-  countdown.innerHTML = `
-  <div>${days}<span>Days</span></div> 
-  <div>${hours}<span>Hours</span></div>
-  <div>${mins}<span>Minutes</span></div>
-  <div>${seconds}<span>Seconds</span></div>
-  `;
-
-  // If launch date is reached
-  if (distance < 0) {
-    // Stop countdown
-    clearInterval(intvl);
-    // Style and output text
-    countdown.style.color = '#17a2b8';
-    countdown.innerHTML = 'Launched!';
-  }
-}, 1000);
+//navi buttons
+$("#navi div").click(function() {
+if($(this).hasClass("activenav")){
+	return false;
+}
+		
+	$("#navi div").removeClass("activenav");
+	$(".portfolio").removeClass('opened');
+	$(".portfolio").show();
+        $('.ombra').hide();
+		
+	var index = $("#navi div").index(this) + 1;
+	$("#img" + index).addClass('opened'); 
+    $(".portfolio").not("#img" + index).fadeOut("fast");
+    $("#img" + index).find('.ombra').fadeIn();
+        
+    $(this).addClass("activenav");
+});
