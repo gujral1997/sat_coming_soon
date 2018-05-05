@@ -1090,3 +1090,81 @@ section.p19 a:hover .s2:before {
     background-position: -330px;
   }
 }
+
+.timer-container {
+  margin: auto;
+  text-align: center;
+  position: relative;
+  top: 30vh;
+  width: 100%;
+  max-width: 1250px;
+}
+
+.timer-title {
+  display: inline-block;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 44px;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  color: #fff;
+  border-bottom: 1px solid #ccc;
+  margin: 0 0 30px;
+  padding: 0 0 30px;
+  line-height: 1.6875;
+}
+
+.timer-counter {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 44px;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.timer-counter span {
+  color: #ddd;
+  display: inline-block;
+  box-sizing: border-box;
+  line-height: 1.6875;
+}
+.timer-counter span strong {
+  color: #0090ff;
+  font-weight: 500;
+  margin-right: 10px;
+  width: 60px;
+  display: inline-block;
+}
+
+.instruction {
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1.6875;
+  margin: 30px auto 0;
+  color: #fff;
+  width: 64%;
+  opacity: 0.5;
+  font-weight: 200;
+  letter-spacing: 5px;
+}
+.instruction a {
+  color: inherit;
+}
+
+
+@media screen and (max-width: 768px) {
+  .timer-title {
+    font-size: 32px;
+  }
+
+  .timer-container {
+    top: 0;
+  }
+
+  .timer-counter {
+    font-size: 32px;
+  }
+  .timer-counter span {
+    display: block;
+  }
+}

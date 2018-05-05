@@ -3,7 +3,7 @@
     body, html {height: 100%}
 
 .bgimg {
-    background-image: url('https://i.pinimg.com/originals/31/82/e5/3182e579d9e985daa8168ea729da7cba.gif');
+    /* background-image: url('https://i.pinimg.com/originals/31/82/e5/3182e579d9e985daa8168ea729da7cba.gif'); */
     min-height: 100%;
     background-position: center;
     background-size: cover;
