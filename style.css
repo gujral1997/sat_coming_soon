@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+    body, html {height: 100%}
+
+.bgimg {
+    background-image: url('https://i.pinimg.com/originals/31/82/e5/3182e579d9e985daa8168ea729da7cba.gif');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.titleWrapper {
+  position: absolute;
+  text-align: center;
+  height: 105px;
+  overflow: hidden;
+  font-size-adjust: inherit; 
+  color: snow;
+  width: 100%;
+  text-align: center;
+}
+
+
+h1 span {
+  position: absolute;
+  display: inline-block;
+  transform: translateY(100%);
+  transition: all 0.25s cubic-bezier(0.65, 0, 0.21, 1.47) 0s;
+}
+
+.titleWrapper.ready h1 span {
+  transform: translateY(0%);
+}
+
+h1.first span {
+  
+  position: relative;
+  z-index: 5;
+}
+
+h1.second span {
+  position: relative;
+  z-index: 1;
+}
+
+h1.first span:nth-of-type(1) {
+  transition-delay: 0.02s;
+}
+
+h1.second span:nth-of-type(1) {
+  transition-delay: 0.08s;
+}
+
+h1.first span:nth-of-type(2) {
+  transition-delay: 0.04s;
+}
+
+h1.second span:nth-of-type(2) {
+  transition-delay: 0.11s;
+}
+
+h1.first span:nth-of-type(3) {
+  transition-delay: 0.06s;
+}
+
+h1.second span:nth-of-type(3) {
+  transition-delay: 0.14s;
+}
+
+h1.first span:nth-of-type(4) {
+  transition-delay: 0.08s;
+}
+
+h1.second span:nth-of-type(4) {
+  transition-delay: 0.17s;
+}
+
+h1.first span:nth-of-type(5) {
+  transition-delay: 0.1s;
+}
+
+h1.second span:nth-of-type(5) {
+  transition-delay: 0.2s;
+}
+
+h1.first span:nth-of-type(6) {
+  transition-delay: 0.12s;
+}
+
+h1.second span:nth-of-type(6) {
+  transition-delay: 0.23s;
+}
+
+h1.first span:nth-of-type(7) {
+  transition-delay: 0.14s;
+}
+
+h1.second span:nth-of-type(7) {
+  transition-delay: 0.26s;
+}
+
+h1.first span:nth-of-type(8) {
+  transition-delay: 0.16s;
+}
+
+h1.second span:nth-of-type(8) {
+  transition-delay: 0.29s;
+}
+
+h1.first span:nth-of-type(9) {
+  transition-delay: 0.18s;
+}
+
+h1.second span:nth-of-type(9) {
+  transition-delay: 0.32s;
+}
+
+h1.first span:nth-of-type(10) {
+  transition-delay: 0.2s;
+}
+
+h1.second span:nth-of-type(10) {
+  transition-delay: 0.35s;
+}
+
+h1.first span:nth-of-type(11) {
+  transition-delay: 0.22s;
+}
+
+h1.second span:nth-of-type(11) {
+  transition-delay: 0.38s;
+}
+
+h1.first span:nth-of-type(12) {
+  transition-delay: 0.24s;
+}
+
+h1.second span:nth-of-type(12) {
+  transition-delay: 0.41s;
+}
+
+h1.first span:nth-of-type(13) {
+  transition-delay: 0.26s;
+}
+
+h1.second span:nth-of-type(13) {
+  transition-delay: 0.44s;
+}
+
+h1.first span:nth-of-type(14) {
+  transition-delay: 0.28s;
+}
+
+h1.second span:nth-of-type(14) {
+  transition-delay: 0.47s;
+}
+
+h1.first span:nth-of-type(15) {
+  transition-delay: 0.3s;
+}
+
+h1.second span:nth-of-type(15) {
+  transition-delay: 0.5s;
+}
+
+h1.first span:nth-of-type(16) {
+  transition-delay: 0.32s;
+}
+
+h1.second span:nth-of-type(16) {
+  transition-delay: 0.53s;
+}
+
+h1.first span:nth-of-type(17) {
+  transition-delay: 0.34s;
+}
+
+h1.second span:nth-of-type(17) {
+  transition-delay: 0.56s;
+}
+
+h1.first span:nth-of-type(18) {
+  transition-delay: 0.36s;
+}
+
+h1.second span:nth-of-type(18) {
+  transition-delay: 0.59s;
+}
+
+h1.first span:nth-of-type(19) {
+  transition-delay: 0.38s;
+}
+
+h1.second span:nth-of-type(19) {
+  transition-delay: 0.62s;
+}
+
+.titleWrapper.ready:hover h1.first span {
+  transform: translateY(-100%);
+}
+
+.titleWrapper.ready:hover h1.second span {
+  transform: translateY(-100%);
+}
