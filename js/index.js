@@ -1,29 +1,36 @@
-// Due    
-var dueDate = "May 17 2018 23:59:00 UTC+10"
+var timer;
 
-// Countdown (1sec)
-var timer = setInterval(function() {
-    var closingTime = new Date(dueDate).getTime();
-    var currentTime = new Date().getTime();
-    var interval = closingTime - currentTime;
-    
-    // Calculate
-    var days = Math.floor(interval / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((interval % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((interval % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((interval % (1000 * 60)) / 1000);
-    
-    // Output
-    document.getElementById("timerCounter").innerHTML = 
-        "<span class='counter-day'>"    + "<strong>" + days    + "</strong>" + "days"    + "</span> " + 
-        "<span class='counter-hour'>"   + "<strong>" + hours   + "</strong>" + "hours"   + "</span> " + 
-        "<span class='counter-minute'>" + "<strong>" + minutes + "</strong>" + "minutes" + "</span> " +  
-        "<span class='counter-second'>" + "<strong>" + seconds + "</strong>" + "seconds" + "</span>";
-    
-    // Expired
-    if (interval < 0) {
-        clearInterval(timer); // Stop timer
-        document.getElementById("timerTitle").innerHTML = "Voting closed";
-        document.getElementById("timerCounter").innerHTML = "";
-    }
+var compareDate = new Date();
+compareDate.setDate(compareDate.getDate()+90); //just for this demo today + 7 days
+
+timer = setInterval(function() {
+  timeBetweenDates(compareDate);
 }, 1000);
+
+function timeBetweenDates(toDate) {
+  var dateEntered = toDate;
+  var now = new Date();
+  var difference = dateEntered.getTime() - now.getTime();
+
+  if (difference <= 0) {
+
+    // Timer done
+    clearInterval(timer);
+  
+  } else {
+    
+    var seconds = Math.floor(difference / 1000);
+    var minutes = Math.floor(seconds / 60);
+    var hours = Math.floor(minutes / 60);
+    var days = Math.floor(hours / 24);
+
+    hours %= 24;
+    minutes %= 60;
+    seconds %= 60;
+
+    $("#days").text(days);
+    $("#hours").text(hours);
+    $("#minutes").text(minutes);
+    $("#seconds").text(seconds);
+  }
+}
