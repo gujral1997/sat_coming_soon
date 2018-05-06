@@ -1095,7 +1095,6 @@ section.p19 a:hover .s2:before {
   margin: auto;
   text-align: center;
   position: relative;
-  top: 30vh;
   width: 100%;
   max-width: 1250px;
 }
@@ -1108,8 +1107,6 @@ section.p19 a:hover .s2:before {
   letter-spacing: 20px;
   color: #fff;
   border-bottom: 1px solid #ccc;
-  margin: 0 0 30px;
-  padding: 0 0 30px;
   line-height: 1.6875;
 }
 
