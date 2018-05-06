@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // JavaScript Document
 // Claudio Gomboli . the EGGS LAB
 // 2012 / 8 / 29
@@ -52,7 +51,6 @@ if($(this).hasClass("activenav")){
         
     $(this).addClass("activenav");
 });
-=======
 // Due    
 var dueDate = "May 17 2018 23:59:00 UTC+10"
 
@@ -82,4 +80,3 @@ var timer = setInterval(function() {
         document.getElementById("timerCounter").innerHTML = "";
     }
 }, 1000);
->>>>>>> master
