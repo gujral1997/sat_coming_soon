@@ -248,12 +248,12 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
   #timer {
     font-family: Arial, sans-serif;
-    font-size: 8px;
+    font-size: 20px;
     color: #fff;
     letter-spacing: -1px;
   }
   #timer span {
-    font-size:24px;
+    font-size:30px;
     color: #fff;
     margin: 0px 3px 0 15px;
   }
