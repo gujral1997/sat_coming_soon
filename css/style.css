@@ -1,28 +1,3 @@
-html,
-body{
-  width:100%;
-	height:100%;
-	margin:0;
-	padding:0;
-}
-
-#all{
-	width:100%;
-	height:100%;
-	overflow-x:hidden;
-	overflow-y: visible;
-    position:relative;
-}
-
-body{
-	font-family: Helvetica, Arial, sans-serif;
-	font-size:12pt;
-	background:#444;
-	color:#352e2a;
-	/* background: url('http://www.claudiogomboli.com/lab/gallery/imgs/background.jpg');
-    background-size: cover;
-    background-position: center center; */
-}
 
 a:link, a:visited {
 	color: #333;
@@ -551,7 +526,6 @@ section.p14 a {
   left: 50%;
   margin-left: -161px;
   margin-top: -47px;
-  z-index: 10;
 }
 section.p14 a:before, section.p14 a:after {
   width: 150px;
@@ -567,7 +541,6 @@ section.p14 a:before, section.p14 a:after {
 }
 section.p14 a:before {
   background-color: #011925;
-  z-index: -1;
 }
 section.p14 a:after {
   background-color: #fff;
