@@ -1,4 +1,6 @@
+<<<<<<< HEAD
 var timer;
+=======
 // JavaScript Document
 // Claudio Gomboli . the EGGS LAB
 // 2012 / 8 / 29
@@ -53,3 +55,50 @@ if($(this).hasClass("activenav")){
     $(this).addClass("activenav");
 });
 // Due    
+var dueDate = "May 17 2018 23:59:00 UTC+10"
+>>>>>>> landing_page
+
+var compareDate = new Date();
+compareDate.setDate(compareDate.getDate()+90); //just for this demo today + 7 days
+
+timer = setInterval(function() {
+  timeBetweenDates(compareDate);
+}, 1000);
+
+function timeBetweenDates(toDate) {
+  var dateEntered = toDate;
+  var now = new Date();
+  var difference = dateEntered.getTime() - now.getTime();
+
+  if (difference <= 0) {
+
+    // Timer done
+    clearInterval(timer);
+  
+  } else {
+    
+<<<<<<< HEAD
+    var seconds = Math.floor(difference / 1000);
+    var minutes = Math.floor(seconds / 60);
+    var hours = Math.floor(minutes / 60);
+    var days = Math.floor(hours / 24);
+
+    hours %= 24;
+    minutes %= 60;
+    seconds %= 60;
+
+    $("#days").text(days);
+    $("#hours").text(hours);
+    $("#minutes").text(minutes);
+    $("#seconds").text(seconds);
+  }
+}
+=======
+    // Expired
+    if (interval < 0) {
+        clearInterval(timer); // Stop timer
+        document.getElementById("timerTitle").innerHTML = "Voting closed";
+        document.getElementById("timerCounter").innerHTML = "";
+    }
+}, 1000);
+>>>>>>> landing_page
